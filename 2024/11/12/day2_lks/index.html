@@ -6,13 +6,15 @@
   
   <title>day2_lks | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
+  <meta name="description" content="课程内容linux文件系统分析123456789101112131415161718192021&#x2F;├── bin -&gt; usr&#x2F;bin # 可执行程序├── boot # 系统启动相关├── dev # 计算机设备├── efi # 和他的名字一样├── etc # linux配置文件├── home # 用户家目录数据├── lib -&gt; usr&#x2F;lib # 库├── lib64 -">
+<meta property="og:type" content="article">
 <meta property="og:title" content="day2_lks">
 <meta property="og:url" content="http://example.com/2024/11/12/day2_lks/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="课程内容linux文件系统分析123456789101112131415161718192021&#x2F;├── bin -&gt; usr&#x2F;bin # 可执行程序├── boot # 系统启动相关├── dev # 计算机设备├── efi # 和他的名字一样├── etc # linux配置文件├── home # 用户家目录数据├── lib -&gt; usr&#x2F;lib # 库├── lib64 -">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-12T02:57:47.000Z">
-<meta property="article:modified_time" content="2024-11-12T03:12:44.000Z">
+<meta property="article:published_time" content="2024-11-12T07:42:07.000Z">
+<meta property="article:modified_time" content="2024-11-12T07:57:48.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="lks">
 <meta property="article:tag" content="linux">
@@ -74,7 +76,7 @@
         <section id="main"><article id="post-day2_lks" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/11/12/day2_lks/" class="article-date">
-  <time class="dt-published" datetime="2024-11-12T02:57:47.000Z" itemprop="datePublished">2024-11-12</time>
+  <time class="dt-published" datetime="2024-11-12T07:42:07.000Z" itemprop="datePublished">2024-11-12</time>
 </a>
     
   </div>
@@ -93,11 +95,44 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h2><h3 id="linux文件系统分析"><a href="#linux文件系统分析" class="headerlink" title="linux文件系统分析"></a>linux文件系统分析</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/</span><br><span class="line">├── bin -&gt; usr/bin # 可执行程序</span><br><span class="line">├── boot # 系统启动相关</span><br><span class="line">├── dev # 计算机设备</span><br><span class="line">├── efi # 和他的名字一样</span><br><span class="line">├── etc # linux配置文件</span><br><span class="line">├── home # 用户家目录数据</span><br><span class="line">├── lib -&gt; usr/lib # 库</span><br><span class="line">├── lib64 -&gt; usr/lib # 库</span><br><span class="line">├── media # 一些自动挂载的存储设备会在这个目录挂载</span><br><span class="line">├── mnt # 一般来说手动挂载的设备都挂载在这里</span><br><span class="line">├── opt</span><br><span class="line">├── proc</span><br><span class="line">├── root # root家目录</span><br><span class="line">├── run</span><br><span class="line">├── sbin -&gt; usr/bin # 可执行程序</span><br><span class="line">├── srv</span><br><span class="line">├── sys</span><br><span class="line">├── tmp # 临时目录</span><br><span class="line">├── usr</span><br><span class="line">└── var # 存放log等</span><br></pre></td></tr></table></figure>
+
+<h3 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h3><p><strong>文件增删改查</strong></p>
+<p>新增： touch,mkdir</p>
+<p>删除： rm,rmdir</p>
+<p>修改： vi等文本编辑器</p>
+<p>重命名、移动： mv</p>
+<p>查看： cat等</p>
+<p>复制：cp</p>
+<h3 id="搜索find常见使用场景"><a href="#搜索find常见使用场景" class="headerlink" title="搜索find常见使用场景"></a>搜索find常见使用场景</h3><p><code>find /search/path -name &quot;searchname&quot;</code></p>
+<p>在&#x2F;search&#x2F;path中以”searchname”文件名(name)搜索</p>
+<blockquote>
+<p>searchname可以使用通配符</p>
+</blockquote>
+<h3 id="grep常见使用场景"><a href="#grep常见使用场景" class="headerlink" title="grep常见使用场景"></a>grep常见使用场景</h3><p><code>grep -rn &quot;example&quot; /path/to/directory</code></p>
+<p>该命令为在目录中递归(r)地搜索example字符串，输出时显示行号(n)</p>
+<h3 id="打包、打包-压缩相关"><a href="#打包、打包-压缩相关" class="headerlink" title="打包、打包&amp;压缩相关"></a>打包、打包&amp;压缩相关</h3><p><code>tar -cvf xx.tar /need/package/files</code></p>
+<p>将文件打包(c)为xx.tar(f意为指定打包输出的文件)，并输出详情信息(v)</p>
+<p>特殊的，如果你想要打包时进行压缩可以添加-z(gzip)或 -j(bzip2)参数</p>
+<p><code>tar -xvf xx.tar</code></p>
+<p>将xx.tar(f指定解包文件)解包(x)并输出详情信息(v)</p>
+<p><code>zip -r xx.zip /need/zip/files</code></p>
+<p>递归地(r)将文件压缩为压缩包xx.zip</p>
+<p><code>unzip xx.zip -d /unzip/path</code></p>
+<p>将xx.zip解压到指定目录(d)</p>
+<h3 id="散碎知识点"><a href="#散碎知识点" class="headerlink" title="散碎知识点"></a>散碎知识点</h3><p>linux中的可执行程序为elf</p>
+<h2 id="思考-todo"><a href="#思考-todo" class="headerlink" title="思考&amp;todo"></a>思考&amp;todo</h2><h3 id="我的kali个性化配置-todo"><a href="#我的kali个性化配置-todo" class="headerlink" title="我的kali个性化配置 todo"></a>我的kali个性化配置 todo</h3><h4 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h4><p>因xfce无法使用remmina的自动调整桌面大小，所以使用gnome套件</p>
+<h4 id="终端-todo"><a href="#终端-todo" class="headerlink" title="终端 todo"></a>终端 todo</h4><p>kitty+zsh(zinit)</p>
+<p>zshrc</p>
+<h3 id="一个精简的vimrc-todo"><a href="#一个精简的vimrc-todo" class="headerlink" title="一个精简的vimrc todo"></a>一个精简的vimrc todo</h3><p>符合个人习惯的移动以及一些简单的函数添加</p>
+<p>避免使用plug</p>
+<p>兼容vi</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>book: 鸟哥的linux私房菜</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/11/12/day2_lks/" data-id="cm3e26l5a0001uwiw5qkybxna" data-title="day2_lks" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/11/12/day2_lks/" data-id="cm3e5uoh40001z0iw68fa0zlk" data-title="day2_lks" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -109,15 +144,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/11/12/day1_kls/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          day1_kls
-        
-      </div>
-    </a>
   
+    <a href="/2024/11/12/day1_kls/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">day1_kls</div>
+    </a>
   
 </nav>
 
@@ -168,11 +199,11 @@
       <ul>
         
           <li>
-            <a href="/2024/11/12/day1_kls/">day1_kls</a>
+            <a href="/2024/11/12/day2_lks/">day2_lks</a>
           </li>
         
           <li>
-            <a href="/2024/11/12/day2_lks/">day2_lks</a>
+            <a href="/2024/11/12/day1_kls/">day1_kls</a>
           </li>
         
       </ul>
