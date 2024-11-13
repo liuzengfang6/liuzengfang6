@@ -69,6 +69,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-virt-manager+remmina舒适的虚拟机体验" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/11/13/virt-manager+remmina%E8%88%92%E9%80%82%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%93%E9%AA%8C/" class="article-date">
+  <time class="dt-published" datetime="2024-11-13T10:40:49.000Z" itemprop="datePublished">2024-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/11/13/virt-manager+remmina%E8%88%92%E9%80%82%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%93%E9%AA%8C/">virt-manager+remmina舒适的虚拟机体验</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>在使用virtualbox时，vbox打开的虚拟机窗口无法便捷得最小化和展开。于是俺用了remmina，在每台vbox虚拟机的系统中开启rdp或是vnc。后面越发约感觉鸡肋，每次安装虚拟机后都要重新安装一下远程桌面服务。这时俺想到之前使用的virt-manager可以使用spice直接连接，而且这是虚拟化软件提供的，并非操作系统提供的。一是无需对虚拟机安装多余的软件，二是即便虚拟机网络不通，也可以方便的管理。</p>
+<p>本文会展示一些关键的配置和一些注意事项。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="virt-manager配置spice连接"><a href="#virt-manager配置spice连接" class="headerlink" title="virt-manager配置spice连接"></a>virt-manager配置spice连接</h3><p><img src="/../assets/image_1731372521093_0.png" alt="image.png"></p>
+<p>password可选，如果想要暴露连接可以将address改为”All interfaces“</p>
+<h3 id="配置remmina连接"><a href="#配置remmina连接" class="headerlink" title="配置remmina连接"></a>配置remmina连接</h3><p><img src="/../assets/image_1731372696484_0.png" alt="image.png"></p>
+<p>仅需填入ip+端口号。这里的ip为宿主机的ip并非客户机的ip</p>
+<h3 id="安装spice增强"><a href="#安装spice增强" class="headerlink" title="安装spice增强"></a>安装spice增强</h3><p><strong>windows</strong></p>
+<p>下载链接在这里找</p>
+<p><a target="_blank" rel="noopener" href="https://www.spice-space.org/download.html">spice-space download</a></p>
+<p><strong>linux</strong></p>
+<p>debian:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 一般来说linux客户机安装后这个包是默认被安装的</span><br><span class="line">sudo apt install qemu-guest-agent</span><br><span class="line">sudo apt install spice-vdagent</span><br></pre></td></tr></table></figure>
+
+<h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><h3 id="使用xfce桌面环境的客户机无法自动调整屏幕大小"><a href="#使用xfce桌面环境的客户机无法自动调整屏幕大小" class="headerlink" title="使用xfce桌面环境的客户机无法自动调整屏幕大小"></a>使用xfce桌面环境的客户机无法自动调整屏幕大小</h3><p>目前xfce暂时没有办法自动调整屏幕大小，如有需求可以参考下面这个链接或者使用其他桌面环境，比如gnome。kde没有测试</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/seife/spice-autorandr">GitHub seife&#x2F;spice-autorandr: Automatically adjust the client window resolution in Linux KVM guests using the SPICE driver</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.spice-space.org/download.html">spice-space download</a></p>
+<p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Virt-manager">Virt-manager ArchWiki</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/11/13/virt-manager+remmina%E8%88%92%E9%80%82%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%93%E9%AA%8C/" data-id="cm3egddk30003xmiwcp7o6tli" data-title="virt-manager+remmina舒适的虚拟机体验" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/virt-manager/" rel="tag">virt-manager</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-day2_lks" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/11/12/day2_lks/" class="article-date">
@@ -178,63 +235,6 @@
 
 
   
-    <article id="post-virt-manager+remmina舒适的虚拟机体验" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/11/12/virt-manager+remmina%E8%88%92%E9%80%82%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%93%E9%AA%8C/" class="article-date">
-  <time class="dt-published" datetime="2024-11-12T09:41:09.000Z" itemprop="datePublished">2024-11-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/11/12/virt-manager+remmina%E8%88%92%E9%80%82%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%93%E9%AA%8C/">virt-manager+remmina舒适的虚拟机体验</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>在使用virtualbox时，vbox打开的虚拟机窗口无法便捷得最小化和展开。于是俺用了remmina，在每台vbox虚拟机的系统中开启rdp或是vnc。后面越发约感觉鸡肋，每次安装虚拟机后都要重新安装一下远程桌面服务。这时俺想到之前使用的virt-manager可以使用spice直接连接，而且这是虚拟化软件提供的，并非操作系统提供的。一是无需对虚拟机安装多余的软件，二是即便虚拟机网络不通，也可以方便的管理。</p>
-<p>本文会展示一些关键的配置和一些注意事项。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="virt-manager配置spice连接"><a href="#virt-manager配置spice连接" class="headerlink" title="virt-manager配置spice连接"></a>virt-manager配置spice连接</h3><p><img src="/../assets/image_1731372521093_0.png" alt="image.png"></p>
-<p>password可选，如果想要暴露连接可以将address改为”All interfaces“</p>
-<h3 id="配置remmina连接"><a href="#配置remmina连接" class="headerlink" title="配置remmina连接"></a>配置remmina连接</h3><p><img src="/../assets/image_1731372696484_0.png" alt="image.png"></p>
-<p>仅需填入ip+端口号。这里的ip为宿主机的ip并非客户机的ip</p>
-<h3 id="安装spice增强"><a href="#安装spice增强" class="headerlink" title="安装spice增强"></a>安装spice增强</h3><p><strong>windows</strong></p>
-<p>下载链接在这里找</p>
-<p><a target="_blank" rel="noopener" href="https://www.spice-space.org/download.html">spice-space download</a></p>
-<p><strong>linux</strong></p>
-<p>debian:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 一般来说linux客户机安装后这个包是默认被安装的</span><br><span class="line">sudo apt install qemu-guest-agent</span><br><span class="line">sudo apt install spice-vdagent</span><br></pre></td></tr></table></figure>
-
-<h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><h3 id="使用xfce桌面环境的客户机无法自动调整屏幕大小"><a href="#使用xfce桌面环境的客户机无法自动调整屏幕大小" class="headerlink" title="使用xfce桌面环境的客户机无法自动调整屏幕大小"></a>使用xfce桌面环境的客户机无法自动调整屏幕大小</h3><p>目前xfce暂时没有办法自动调整屏幕大小，如有需求可以参考下面这个链接或者使用其他桌面环境，比如gnome。kde没有测试</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/seife/spice-autorandr">GitHub seife&#x2F;spice-autorandr: Automatically adjust the client window resolution in Linux KVM guests using the SPICE driver</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.spice-space.org/download.html">spice-space download</a></p>
-<p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Virt-manager">Virt-manager ArchWiki</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/11/12/virt-manager+remmina%E8%88%92%E9%80%82%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%93%E9%AA%8C/" data-id="cm3egddk30003xmiwcp7o6tli" data-title="virt-manager+remmina舒适的虚拟机体验" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/virt-manager/" rel="tag">virt-manager</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-day1_kls" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/11/12/day1_kls/" class="article-date">
@@ -290,7 +290,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lks/" rel="tag">lks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virt-manager/" rel="tag">virt-manager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="tag">虚拟化</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lks/" rel="tag">lks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virt-manager/" rel="tag">virt-manager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="tag">虚拟化</a></li></ul>
     </div>
   </div>
 
@@ -300,7 +300,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/lks/" style="font-size: 20px;">lks</a> <a href="/tags/virt-manager/" style="font-size: 10px;">virt-manager</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" style="font-size: 10px;">虚拟化</a>
+      <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/lks/" style="font-size: 20px;">lks</a> <a href="/tags/virt-manager/" style="font-size: 10px;">virt-manager</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" style="font-size: 10px;">虚拟化</a>
     </div>
   </div>
 
@@ -322,11 +322,11 @@
       <ul>
         
           <li>
-            <a href="/2024/11/12/day2_lks/">day2_lks</a>
+            <a href="/2024/11/13/virt-manager+remmina%E8%88%92%E9%80%82%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%93%E9%AA%8C/">virt-manager+remmina舒适的虚拟机体验</a>
           </li>
         
           <li>
-            <a href="/2024/11/12/virt-manager+remmina%E8%88%92%E9%80%82%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%93%E9%AA%8C/">virt-manager+remmina舒适的虚拟机体验</a>
+            <a href="/2024/11/12/day2_lks/">day2_lks</a>
           </li>
         
           <li>
